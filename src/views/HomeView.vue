@@ -40,6 +40,7 @@
         <div>
           <div v-for="gameLatest in gamesLatests" :key="gameLatest.id">
             <LongCard
+              :id="gameLatest.id"
               :title="gameLatest.title"
               :thumbnail="gameLatest.thumbnail"
               :short_description="gameLatest.short_description"
@@ -55,6 +56,7 @@
         <h1 class="font-bold text-xl">Game Populer</h1>
         <div v-for="(gamesPopularity) in gamesPopularitys" :key="gamesPopularity.id">
           <LargeCard
+            :id="gamesPopularity.id"
             :title="gamesPopularity.title"
             :thumbnail="gamesPopularity.thumbnail"
           />

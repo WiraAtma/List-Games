@@ -2,6 +2,7 @@
     import { computed } from 'vue';
 
     const props = defineProps({
+        id: Number,
         title: String,
         thumbnail: String,
         short_description: String,
@@ -14,7 +15,7 @@
     });
 </script>
 <template>
-    <router-link to="/games">
+    <router-link :to="`/games/${id}`">
         <div class="border w-full my-3 p-3 rounded bg-slate-100 flex hover:transform transition-transform duration-300 hover:scale-105">
             <div class="flex w-85%">
                 <img :src="thumbnail" width="30%" alt="cover"/>

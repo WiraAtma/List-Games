@@ -1,12 +1,13 @@
 <script setup>
     const props = defineProps({
+        id: Number,
         title: String,
         thumbnail: String,
     })
 </script>
 
 <template>
-    <router-link to="/games">
+    <router-link :to="`/games/${id}`">
         <div class="rounded-lg my-3 border hover:transform transition-transform duration-300 hover:scale-105">
             <img :src="thumbnail">
             <div class="flex justify-between bg-slate-100 p-2">

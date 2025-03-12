@@ -39,7 +39,7 @@ import { ref } from 'vue';
 </script>
 
 <template>
-    <div>
+    <div class="mb-10">
         <h1 class="mb-3 font-bold">Pertanyaan Seputar GAMEGRATIS.ID</h1>
         <div
             class="border p-3 bg-slate-100 mb-3 hover:transform transition-transform duration-300 hover:scale-[101%]"
