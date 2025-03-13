@@ -51,24 +51,28 @@
 
     onMounted(async () => {
         await fetchData();
-        setTimeout(initObserver, 1000); 
+        setTimeout(initObserver, 2000); 
     });
+
+    onMounted(() => {
+        window.scrollTo(0,0)
+    })
 </script>
 
 <template>
-    <div class="px-60 py-10 w-full pt-32">
+    <div class="px-4 py-10 w-full pt-32 md:px-60">
         <div>
-            <h1 class="text-3xl mb-5 flex gap-2 items-center">
+            <h1 class="text-2xl mb-5 flex gap-2 items-center md:text-3xl">
                 <svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 512 512">
                     <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
                 </svg>
                 Cari Game
             </h1>
-            <input v-model="searchQuery" class="border p-2 rounded-lg h-12 w-[50%]" type="text" placeholder="Cari Game ...">
+            <input v-model="searchQuery" class="border p-2 rounded-lg h-12 w-full md:w-[50%]" type="text" placeholder="Cari Game ...">
         </div>
 
         <div class="mt-5">
-            <div class="grid grid-cols-4 gap-5" v-if="filteredData.length > 0">
+            <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" v-if="filteredData.length > 0">
                 <MediumCard v-for="(item) in filteredData" :key="item.id"
                     :id="item.id"
                     :title="item.title"

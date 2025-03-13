@@ -25,13 +25,13 @@
 </script>
 
 <template>
-    <div class="px-60 w-full pt-20">
-        <div class="flex gap-5">
+    <div class="px-4 md:px-60 w-full pt-20">
+        <div class="flex flex-col md:flex-row gap-5">
             <ImageBox
-                :thumbnail = "game.thumbnail"
-                :game_url = "game.game_url"
+                :thumbnail="game.thumbnail"
+                :game_url="game.game_url"
             />
-            <div class="w-[70%]">
+            <div class="w-full md:w-[70%]">
                 <div class="flex items-center gap-2">
                     <router-link to="/" class="hover:text-slate-300">Home ></router-link>
                     <router-link to="/games" class="hover:text-slate-300">Games ></router-link>
@@ -45,7 +45,7 @@
                 <div>
                     <h1 class="text-xl font-semibold">Informasi Tambahan</h1>
                     <hr class="my-3">
-                    <div class="grid grid-cols-3 gap-y-5 gap-x-52">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-y-5 gap-x-5 md:gap-x-52">
                         <div>
                             <h3>Title</h3>
                             <p class="font-semibold">{{ game.title }}</p>
@@ -70,7 +70,6 @@
                             <h3>Platform</h3>
                             <p class="font-semibold">{{ game.platform }}</p>
                         </div>
-                        <hr>
                     </div>
                 </div>
                 <ImageScrolling
@@ -79,7 +78,7 @@
                 <div class="mb-10">
                     <h1 class="text-xl font-semibold">Spesifikasi Minimal</h1>
                     <hr class="my-3">
-                    <div class="grid grid-cols-2 gap-5 gap-x-80">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-x-80">
                         <div>
                             <h3>Sistem Operasi</h3>
                             <p class="font-semibold">{{ game.minimum_system_requirements?.os }}</p>

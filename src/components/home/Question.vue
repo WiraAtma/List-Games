@@ -5,27 +5,27 @@ import { ref } from 'vue';
     const questions = [
         {
             id: 1,
-            question: 'Apa Itu Gamegratis.id?',
+            question: 'Apa Itu Gamegratis.id? ▾',
             answer: 'Gamegratis.id adalah sebuah website yang menyediakan berbagai macam game gratis yang bisa di download oleh pengguna. Game yang disediakan di website ini adalah game yang legal dan aman untuk di download.'
         },
         {
             id: 2,
-            question: 'Apakah Game yang disediakan di Gamegratis.id legal?',
+            question: 'Apakah Game yang disediakan di Gamegratis.id legal? ▾',
             answer: 'Ya, game yang disediakan di Gamegratis.id adalah game yang legal dan aman untuk di download. Game yang disediakan di website ini adalah game yang sudah mendapatkan izin dari developer game tersebut.'
         }, 
         {
             id: 3,
-            question: 'Apakah Game yang disediakan di Gamegratis.id aman untuk di download?',
+            question: 'Apakah Game yang disediakan di Gamegratis.id aman untuk di download? ▾',
             answer: 'Ya, game yang disediakan di Gamegratis.id adalah game yang aman untuk di download. Game yang disediakan di website ini adalah game yang sudah di cek oleh tim kami untuk memastikan bahwa game tersebut aman untuk di download.'
         }, 
         {
             id: 4,
-            question: 'Apakah Game yang disediakan di Gamegratis.id bisa dimainkan di semua perangkat?',
+            question: 'Apakah Game yang disediakan di Gamegratis.id bisa dimainkan di semua perangkat? ▾',
             answer: 'Ya, game yang disediakan di Gamegratis.id bisa dimainkan di semua perangkat. Game yang disediakan di website ini adalah game yang sudah di optimalkan untuk di mainkan di semua perangkat.'
         }, 
         {
             id:5,
-            question: 'Apakah Game yang disediakan di Gamegratis.id bisa dimainkan secara offline?',
+            question: 'Apakah Game yang disediakan di Gamegratis.id bisa dimainkan secara offline? ▾',
             answer: 'Ya, game yang disediakan di Gamegratis.id bisa dimainkan secara offline. Game yang disediakan di website ini adalah game yang bisa di mainkan secara offline tanpa memerlukan koneksi internet.'
         }
     ];

@@ -48,7 +48,7 @@
             />
           </div>
           <div class="flex">
-            <RouterLink to="/games/search" class="border p-3 rounded-lg ml-auto hover:bg-slate-100">Game Lainnya</RouterLink>
+            <RouterLink to="/games" class="border p-3 rounded-lg ml-auto hover:bg-slate-100">Game Lainnya</RouterLink>
           </div>
         </div>
       </div>
