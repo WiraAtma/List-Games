@@ -2,25 +2,17 @@
     import ImageBox from '@/components/game-detail/ImageBox.vue';
     import ImageScrolling from '@/components/game-detail/ImageScrolling.vue';
     import Question from '@/components/home/Question.vue';
-    import { onMounted, ref } from 'vue';
-    import { useRoute } from 'vue-router';
+    import { useGameDetailStore } from '@/store/gameDetailStore';
+    import { computed, onMounted } from 'vue';
 
-    const route = useRoute();
-    const game = ref({});
+    const gameDetailStore = useGameDetailStore();
 
     onMounted(async () => {
-        try {
-            const response = await fetch(`/api/api/game?id=${route.params.id}`);
-            const data = await response.json();
-            game.value = data;
-        } catch (error) {
-            console.error('Error fetching game data:', error);
-        }
-    });
-
-    onMounted(() => {
+        await gameDetailStore.fetchData();
         window.scrollTo(0, 0);
     });
+
+    const game = computed(() => gameDetailStore.game)
 
 </script>
 

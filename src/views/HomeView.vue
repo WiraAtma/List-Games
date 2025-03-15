@@ -3,32 +3,17 @@
   import LongCard from '@/components/cardbox/LongCard.vue';
   import Banner from '@/components/home/Banner.vue';
   import Question from '@/components/home/Question.vue';
-  import { onMounted, reactive } from 'vue';
+  import { useHomeStore } from '@/store/homeStore';
+  import { onMounted } from 'vue';
 
-  const gamesLatests = reactive([]);
-  const gamesPopularitys = reactive([]);
-
-  onMounted(async () => {
-    try {
-      const response = await fetch('/api/api/games?sort-by=release-date');
-      const data = await response.json();
-      const limitedData = data.slice(0, 7);
-      gamesLatests.push(...limitedData);
-    } catch (error) {
-      console.error('Error GameLatest API:', error);
-    }
-  })
+  const homeStore = useHomeStore();
 
   onMounted(async () => {
-    try {
-      const response = await fetch('/api/api/games?sort-by=popularity');
-      const data = await response.json();
-      const limitedData = data.slice(0, 4);
-      gamesPopularitys.push(...limitedData);
-    } catch (error) {
-      console.error('Error Popularity API:', error);
-    }
+    await homeStore.gameRelease();
+    await homeStore.gamePopularity();
+    window.scrollTo(0, 0);
   })
+
 </script>
 
 <template>
@@ -38,7 +23,7 @@
       <div>
         <h1 class="font-bold text-xl">Game Terbaru</h1>
         <div>
-          <div v-for="gameLatest in gamesLatests" :key="gameLatest.id">
+          <div v-for="gameLatest in homeStore.gamesLatests" :key="gameLatest.id">
             <LongCard
               :id="gameLatest.id"
               :title="gameLatest.title"
@@ -54,7 +39,7 @@
       </div>
       <div>
         <h1 class="font-bold text-xl">Game Populer</h1>
-        <div v-for="(gamesPopularity) in gamesPopularitys" :key="gamesPopularity.id">
+        <div v-for="(gamesPopularity) in homeStore.gamesPopularitys" :key="gamesPopularity.id">
           <LargeCard
             :id="gamesPopularity.id"
             :title="gamesPopularity.title"
