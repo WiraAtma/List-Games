@@ -12,7 +12,7 @@
     try {
       const response = await fetch('/api/api/games?sort-by=release-date');
       const data = await response.json();
-      const limitedData = data.slice(0, 7);
+      const limitedData = data.slice(0, 6);
       gamesLatests.push(...limitedData);
     } catch (error) {
       console.error('Error GameLatest API:', error);
